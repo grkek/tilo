@@ -5,9 +5,9 @@ module Tilo
     property socket : UNIXSocket = UNIXSocket.new(JavaScript::Engine.instance.path)
     property scripts : Array(String) = [] of String
 
-    property content_directory : String
+    property content_directory : String = "/tmp/"
 
-    def initialize(@content_directory : String)
+    def initialize(@content_directory : String = "/tmp/")
     end
 
     # Create the main application, initialize the JavaScript context and build the components.
@@ -182,6 +182,8 @@ module Tilo
     end
 
     private def resolve_paths(path : String)
+      return unless File.exists?(path)
+
       children = Dir.children path
 
       children.each do |child|
