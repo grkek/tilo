@@ -1,0 +1,30 @@
+.headerLabel {
+  font-size: 100px;
+  font-weight: 400;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.horizontalSeparator {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.usernameLabel {
+  margin-top: 25px;
+}
+
+.chatListBox {
+  background-color: transparent;
+}
+
+.chatListBox option{
+  background-color: transparent;
+}
+
+.chatTextEntry {
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: transparent;
+  border-radius: 0px;
+}

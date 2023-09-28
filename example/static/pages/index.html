@@ -1,0 +1,25 @@
+<Application applicationId="com.tilo.desktop">
+  <Script src="index.js"></Script>
+  <StyleSheet src="index.css"></StyleSheet>
+
+  <Window title="Untitled Window" width=400 height=400>
+    <Box>
+      <Box>
+        <Image id="crystalLogo" containerExpand=true/>
+      </Box>
+
+      <HorizontalSeparator/>
+
+      <Box>
+        <Box>
+          <Label className="usernameLabel">Username</Label>
+        </Box>
+
+        <Box orientation="vertical">
+          <Entry id="usernameEntry" horizontalAlignment="Center" />
+          <Button id="joinButton" horizontalAlignment="Center" >Join</Button>
+        </Box>
+      </Box>
+    </Box>
+  </Window>
+</Application>

@@ -1,0 +1,9 @@
+/doc/
+/lib/
+/bin/
+/.shards/
+/static/scripts/
+
+/shard.lock
+/application
+/application.dwarf
