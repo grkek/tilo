@@ -41,7 +41,7 @@ module Tilo
           JSON::Any.new(false)
         }
 
-        destroy_children = -> {
+        destroy_children = ->{
           box.children.each do |child|
             box.remove(child)
           end
@@ -303,7 +303,7 @@ module Tilo
         list_box = @widget.as(Gtk::ListBox)
 
         remove_all = ->{
-          list_box.remove_all()
+          list_box.remove_all
           JSON::Any.new(nil)
         }
 

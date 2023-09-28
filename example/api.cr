@@ -8,20 +8,20 @@ class UsersController < Grip::Controllers::Http
     username = context.fetch_path_params.["username"].to_s
 
     if user = @users[username]?
-      context.json({ "success" => true, "message" => nil, "body" => user})
+      context.json({"success" => true, "message" => nil, "body" => user})
     else
       @users[username] = JSON::Any.new(
         {
-          "chatId" => JSON::Any.new(UUID.random.to_s)
+          "chatId" => JSON::Any.new(UUID.random.to_s),
         }
       )
 
-      context.json({ "success" => true, "message" => nil, "body" => @users[username]})
+      context.json({"success" => true, "message" => nil, "body" => @users[username]})
     end
   end
 
   def messages(context : Context)
-    context.json({ "success" => true, "message" => nil, "body" => @messages })
+    context.json({"success" => true, "message" => nil, "body" => @messages})
   end
 
   def message(context : Context)
@@ -29,15 +29,15 @@ class UsersController < Grip::Controllers::Http
     text = context.fetch_json_params.["text"].to_s
 
     if user = @users[username]?
-      @messages.push({ "username" => username, "text" => text })
+      @messages.push({"username" => username, "text" => text})
 
       context
         .put_status(200)
-        .json({ "success" => true, "message" => nil, "body" => nil })
+        .json({"success" => true, "message" => nil, "body" => nil})
     else
       context
         .put_status(404)
-        .json({ "success" => false, "message" => "User is not registered", "body" => nil })
+        .json({"success" => false, "message" => "User is not registered", "body" => nil})
     end
   end
 end

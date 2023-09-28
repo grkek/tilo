@@ -225,7 +225,6 @@ module Tilo
             end
           end
 
-
           sandbox.push_global_proc("UserInterface__ScrolledWindow", 10) do |ptr|
             env = Duktape::Sandbox.new ptr
 
